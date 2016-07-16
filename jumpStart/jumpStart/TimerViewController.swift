@@ -31,11 +31,20 @@ class TimerViewController: UIViewController {
         formatter.dateFormat = "HH:mm"
         alermLabel.text = formatter.stringFromDate(datePicker.date)
         
+        miningLoop()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func miningLoop() {
+        NSOperationQueue().addOperationWithBlock({ () -> Void in
+            while(true){
+                print("mining!")
+            }
+        })
     }
 
     @IBAction func updateAlerm(sender: AnyObject) {
