@@ -10,8 +10,8 @@ import UIKit
 
 class TimerViewController: UIViewController {
     
-    let string = "Hello world!"
-    let difficulty = 3
+    let string = "Hello, world!"
+    let difficulty = 4
     
     @IBOutlet weak var timerLabel: UILabel!
     
@@ -45,11 +45,27 @@ class TimerViewController: UIViewController {
     
     func miningLoop() {
         NSOperationQueue().addOperationWithBlock({ () -> Void in
+            var problem = ""
+            var answer = ""
             while(true){
-                print("mining!")
+                problem = self.string + self.randomStringWithLength(40)
+                answer = self.sha256(problem) as String
+                //print(answer)
+                if answer.hasPrefix("0000") {
+                    print("string:" + problem + " ,sha256:" + answer)
+                }
             }
         })
     }
+    
+    func randomStringWithLength(length: Int) -> String {
+        let alphabet = "-_1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        let upperBound = UInt32(alphabet.characters.count)
+        return String((0..<length).map { _ -> Character in
+            return alphabet[alphabet.startIndex.advancedBy(Int(arc4random_uniform(upperBound)))]
+            })
+    }
+
 
     @IBAction func updateAlerm(sender: AnyObject) {
         let formatter = NSDateFormatter()
@@ -93,7 +109,16 @@ class TimerViewController: UIViewController {
             }
         }
     }
-
+    
+    func sha256(string: NSString) -> NSString {
+        let data = string.dataUsingEncoding(NSUTF8StringEncoding)!
+        var hash = [UInt8](count: Int(CC_SHA256_DIGEST_LENGTH), repeatedValue: 0)
+        CC_SHA256(data.bytes, CC_LONG(data.length), &hash)
+        let resstr = NSMutableString()
+        for byte in hash {
+            resstr.appendFormat("%02hhx", byte)
+        }
+        return resstr
+    }
 
 }
-

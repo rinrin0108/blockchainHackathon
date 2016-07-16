@@ -405,6 +405,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jumpStartTeam.jumpStart;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = jumpStart/bridge.h;
 			};
 			name = Debug;
 		};
@@ -416,6 +417,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jumpStartTeam.jumpStart;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = jumpStart/bridge.h;
 			};
 			name = Release;
 		};
@@ -484,6 +486,7 @@
 				0DA36C851D3A522A00A64BCA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0DA36C861D3A522A00A64BCA /* Build configuration list for PBXNativeTarget "jumpStartTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +495,7 @@
 				0DA36C881D3A522A00A64BCA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0DA36C891D3A522A00A64BCA /* Build configuration list for PBXNativeTarget "jumpStartUITests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +504,7 @@
 				0DA36C8B1D3A522A00A64BCA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
