@@ -9,6 +9,10 @@
 import UIKit
 
 class TimerViewController: UIViewController {
+    
+    let string = "Hello world!"
+    let difficulty = 3
+    
     @IBOutlet weak var timerLabel: UILabel!
     
     @IBOutlet weak var alermLabel: UILabel!
