@@ -58,11 +58,71 @@
                         <outlet property="alermSwitch" destination="nHI-iK-LTE" id="DAo-Te-U5U"/>
                         <outlet property="datePicker" destination="jJQ-Uh-dgg" id="0iD-uv-Tgn"/>
                         <outlet property="timerLabel" destination="pWi-Uc-y6r" id="7CG-VG-dXh"/>
+                        <segue destination="vOJ-M0-x7V" kind="show" identifier="resultSeg" id="5WF-V2-CQT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="243.5" y="283.5"/>
+            <point key="canvasLocation" x="239.5" y="289.5"/>
+        </scene>
+        <!--Result View Controller-->
+        <scene sceneID="ygb-pt-plq">
+            <objects>
+                <viewController restorationIdentifier="ResultViewController" storyboardIdentifier="ResultViewController" id="vOJ-M0-x7V" customClass="ResultViewController" customModule="jumpStart" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ceF-VH-3p7"/>
+                        <viewControllerLayoutGuide type="bottom" id="GrX-qh-zLA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="48v-lD-Ce1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your pool mined tonight:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D5k-C1-65u">
+                                <rect key="frame" x="94" y="78" width="187" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ueE-uv-PrV">
+                                <rect key="frame" x="20" y="126" width="335" height="68"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="51"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Donate to:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hUE-cF-DeR">
+                                <rect key="frame" x="155" y="266" width="80" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o7e-Ce-Vlx">
+                                <rect key="frame" x="154" y="548" width="67" height="41"/>
+                                <state key="normal" title="Donate"/>
+                                <connections>
+                                    <action selector="pushDonate:" destination="vOJ-M0-x7V" eventType="touchUpInside" id="f0X-kj-isy"/>
+                                </connections>
+                            </button>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pH7-sp-Kl4">
+                                <rect key="frame" x="0.0" y="295" width="375" height="216"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="vOJ-M0-x7V" id="8fc-6G-eq6"/>
+                                    <outlet property="delegate" destination="vOJ-M0-x7V" id="mP2-bJ-PPm"/>
+                                </connections>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="minedLabel" destination="ueE-uv-PrV" id="way-pB-V1C"/>
+                        <outlet property="pickerView" destination="pH7-sp-Kl4" id="Nv1-b2-CVf"/>
+                        <segue destination="bcH-tn-74s" kind="unwind" identifier="unwindSeg" unwindAction="unwindToTop:" id="k6l-Yc-BGZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YZJ-jj-n7C" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="bcH-tn-74s" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="763.5" y="283.5"/>
         </scene>
     </scenes>
 </document>

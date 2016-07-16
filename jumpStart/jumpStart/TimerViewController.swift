@@ -13,6 +13,9 @@ class TimerViewController: UIViewController {
     let string = "Hello, world!"
     let difficulty = 4
     
+    @IBAction func unwindToTop(segue: UIStoryboardSegue) {
+    }
+    
     @IBOutlet weak var timerLabel: UILabel!
     
     @IBOutlet weak var alermLabel: UILabel!
@@ -24,6 +27,7 @@ class TimerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        UIApplication.sharedApplication().idleTimerDisabled = true
         
         alermSwitch.selectedSegmentIndex = 1
         
@@ -53,6 +57,7 @@ class TimerViewController: UIViewController {
                 //print(answer)
                 if answer.hasPrefix("0000") {
                     print("string:" + problem + " ,sha256:" + answer)
+                    mindCount += 1
                 }
             }
         })
@@ -95,12 +100,13 @@ class TimerViewController: UIViewController {
                     (action: UIAlertAction!) -> Void in
                     print("OK")
                     self.alermSwitch.selectedSegmentIndex = 1
+                    
+                    self.nextScreen()
                 })
                 
                 let cancelAction: UIAlertAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler:{
                     (action: UIAlertAction!) -> Void in
                     print("Cancel")
-                    
                 })
                 
                 alert.addAction(cancelAction)
@@ -108,6 +114,11 @@ class TimerViewController: UIViewController {
                 presentViewController(alert, animated: true, completion: nil)
             }
         }
+    }
+    
+    func nextScreen() {
+        print("next")
+        self.performSegueWithIdentifier("resultSeg", sender: nil)
     }
     
     func sha256(string: NSString) -> NSString {

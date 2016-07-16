@@ -14,6 +14,7 @@
 		0DA36C691D3A522A00A64BCA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DA36C671D3A522A00A64BCA /* LaunchScreen.storyboard */; };
 		0DA36C741D3A522A00A64BCA /* jumpStartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA36C731D3A522A00A64BCA /* jumpStartTests.swift */; };
 		0DA36C7F1D3A522A00A64BCA /* jumpStartUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA36C7E1D3A522A00A64BCA /* jumpStartUITests.swift */; };
+		0DA36C8D1D3A9B9000A64BCA /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA36C8C1D3A9B9000A64BCA /* ResultViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		0DA36C7A1D3A522A00A64BCA /* jumpStartUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = jumpStartUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DA36C7E1D3A522A00A64BCA /* jumpStartUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jumpStartUITests.swift; sourceTree = "<group>"; };
 		0DA36C801D3A522A00A64BCA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0DA36C8C1D3A9B9000A64BCA /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				0DA36C651D3A522A00A64BCA /* Assets.xcassets */,
 				0DA36C671D3A522A00A64BCA /* LaunchScreen.storyboard */,
 				0DA36C6A1D3A522A00A64BCA /* Info.plist */,
+				0DA36C8C1D3A9B9000A64BCA /* ResultViewController.swift */,
 			);
 			path = jumpStart;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 			files = (
 				0DA36C611D3A522A00A64BCA /* TimerViewController.swift in Sources */,
 				0DA36C5F1D3A522A00A64BCA /* AppDelegate.swift in Sources */,
+				0DA36C8D1D3A9B9000A64BCA /* ResultViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
