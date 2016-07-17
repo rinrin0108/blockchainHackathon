@@ -51,7 +51,8 @@ class ResultViewController: UIViewController {
     }
 
     @IBAction func pushDonate(sender: AnyObject) {
-        let alert: UIAlertController = UIAlertController(title: "Donated", message: "Thank you!", preferredStyle:  UIAlertControllerStyle.Alert)
+        let message = "\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+        let alert: UIAlertController = UIAlertController(title: "Donated, Thank you!", message: message, preferredStyle:  UIAlertControllerStyle.Alert)
         
         let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler:{
             (action: UIAlertAction!) -> Void in
@@ -60,7 +61,17 @@ class ResultViewController: UIViewController {
             self.performSegueWithIdentifier("unwindSeg", sender: self)
         })
         
+        let imageView = UIImageView(frame: CGRectMake(20, 60, 230, 230))
+        imageView.image = UIImage(named: "macmorning")
+        //imageView.translatesAutoresizingMaskIntoConstraints = false
+        
+        /*
+        let height:NSLayoutConstraint = NSLayoutConstraint(item: alert.view, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: self.view.frame.height * 0.80)
+        alert.view.addConstraint(height)
+         */
+        alert.view.addSubview(imageView)
         alert.addAction(defaultAction)
+        //alert.view.sizeToFit()
         presentViewController(alert, animated: true, completion: nil)
     }
     

@@ -43,7 +43,7 @@ class TimerViewController: UIViewController {
         alermLabel.text = formatter.stringFromDate(datePicker.date)
         
         do {
-            let filePath = NSBundle.mainBundle().pathForResource("alerm", ofType: "mp3")
+            let filePath = NSBundle.mainBundle().pathForResource("macmorning", ofType: "mp3")
             let audioPath = NSURL(fileURLWithPath: filePath!)
             alermBgm = try AVAudioPlayer(contentsOfURL: audioPath)
             alermBgm.numberOfLoops = -1;

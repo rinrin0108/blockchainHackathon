@@ -16,6 +16,7 @@
 		0DA36C7F1D3A522A00A64BCA /* jumpStartUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA36C7E1D3A522A00A64BCA /* jumpStartUITests.swift */; };
 		0DA36C8D1D3A9B9000A64BCA /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA36C8C1D3A9B9000A64BCA /* ResultViewController.swift */; };
 		0DA36C901D3B90CD00A64BCA /* alerm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0DA36C8F1D3B90CD00A64BCA /* alerm.mp3 */; };
+		0DA36C921D3BB18800A64BCA /* macmorning.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0DA36C911D3BB18800A64BCA /* macmorning.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		0DA36C801D3A522A00A64BCA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0DA36C8C1D3A9B9000A64BCA /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		0DA36C8F1D3B90CD00A64BCA /* alerm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = alerm.mp3; sourceTree = "<group>"; };
+		0DA36C911D3BB18800A64BCA /* macmorning.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = macmorning.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +136,7 @@
 		0DA36C8E1D3B90AE00A64BCA /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				0DA36C911D3BB18800A64BCA /* macmorning.mp3 */,
 				0DA36C8F1D3B90CD00A64BCA /* alerm.mp3 */,
 			);
 			name = resources;
@@ -244,6 +247,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0DA36C901D3B90CD00A64BCA /* alerm.mp3 in Resources */,
+				0DA36C921D3BB18800A64BCA /* macmorning.mp3 in Resources */,
 				0DA36C691D3A522A00A64BCA /* LaunchScreen.storyboard in Resources */,
 				0DA36C661D3A522A00A64BCA /* Assets.xcassets in Resources */,
 				0DA36C641D3A522A00A64BCA /* Main.storyboard in Resources */,
