@@ -36,7 +36,7 @@ class TimerViewController: UIViewController {
         
         // firsttime
         updateDateLabel()
-        NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector(TimerViewController.updateDateLabel), userInfo: nil, repeats: true)
+        NSTimer.scheduledTimerWithTimeInterval(2, target: self, selector: #selector(TimerViewController.updateDateLabel), userInfo: nil, repeats: true)
         
         let formatter = NSDateFormatter()
         formatter.dateFormat = "HH:mm"
@@ -68,7 +68,7 @@ class TimerViewController: UIViewController {
                 problem = self.string + self.randomStringWithLength(40)
                 answer = self.sha256(problem) as String
                 //print(answer)
-                if answer.hasPrefix("0000") {
+                if answer.hasPrefix("000") {
                     print("string:" + problem + " ,sha256:" + answer)
                     mindCount += 1
                 }
@@ -119,10 +119,14 @@ class TimerViewController: UIViewController {
                     self.nextScreen()
                 })
                 
-                let cancelAction: UIAlertAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler:{
+                let cancelAction: UIAlertAction = UIAlertAction(title: "Snooze", style: UIAlertActionStyle.Cancel, handler:{
                     (action: UIAlertAction!) -> Void in
                     self.alermBgm.stop()
-                    print("Cancel")
+                    self.datePicker.setDate(NSDate(timeIntervalSinceNow: 60 * 5), animated: true) // 5 minutes snooze
+                    let formatter = NSDateFormatter()
+                    formatter.dateFormat = "HH:mm"
+                    self.alermLabel.text = formatter.stringFromDate(self.datePicker.date)
+                    print("Snooze")
                 })
                 
                 alert.addAction(cancelAction)

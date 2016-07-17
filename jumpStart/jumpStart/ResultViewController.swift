@@ -15,6 +15,8 @@ class ResultViewController: UIViewController {
     
     @IBOutlet weak var minedLabel: UILabel!
     
+    
+    
     var pickOption = ["UNICEF", "Red Cross", "Local Non-Profit organization"]
     
     override func viewDidLoad() {
