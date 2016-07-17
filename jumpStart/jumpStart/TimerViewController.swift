@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import AVFoundation
 
 class TimerViewController: UIViewController {
     
     let string = "Hello, world!"
     let difficulty = 4
+    
+    var alermBgm = AVAudioPlayer()
     
     @IBAction func unwindToTop(segue: UIStoryboardSegue) {
     }
@@ -38,6 +41,16 @@ class TimerViewController: UIViewController {
         let formatter = NSDateFormatter()
         formatter.dateFormat = "HH:mm"
         alermLabel.text = formatter.stringFromDate(datePicker.date)
+        
+        do {
+            let filePath = NSBundle.mainBundle().pathForResource("alerm", ofType: "mp3")
+            let audioPath = NSURL(fileURLWithPath: filePath!)
+            alermBgm = try AVAudioPlayer(contentsOfURL: audioPath)
+            alermBgm.numberOfLoops = -1;
+            alermBgm.prepareToPlay()
+        } catch {
+            print("Error")
+        }
         
         miningLoop()
     }
@@ -96,16 +109,19 @@ class TimerViewController: UIViewController {
                 
                 let alert: UIAlertController = UIAlertController(title: "Alert", message: "Wake up!", preferredStyle:  UIAlertControllerStyle.Alert)
                 
+                alermBgm.play()
+                
                 let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler:{
                     (action: UIAlertAction!) -> Void in
                     print("OK")
                     self.alermSwitch.selectedSegmentIndex = 1
-                    
+                    self.alermBgm.stop()
                     self.nextScreen()
                 })
                 
                 let cancelAction: UIAlertAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler:{
                     (action: UIAlertAction!) -> Void in
+                    self.alermBgm.stop()
                     print("Cancel")
                 })
                 

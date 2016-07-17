@@ -20,6 +20,7 @@ class ResultViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        pickerView.tintColor = UIColor.whiteColor()
         minedLabel.text = "$" + String(Double(mindCount) * 0.000650)
     }
     
@@ -39,6 +40,12 @@ class ResultViewController: UIViewController {
     
     func pickerView(pickerView: UIPickerView!, titleForRow row: Int, forComponent component: Int) -> String!{
         return pickOption[row]
+    }
+    
+    func pickerView(pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        let titleData = pickOption[row]
+        let myTitle = NSAttributedString(string: titleData, attributes: [NSFontAttributeName:UIFont(name: "Georgia", size: 15.0)!,NSForegroundColorAttributeName:UIColor.whiteColor()])
+        return myTitle
     }
 
     @IBAction func pushDonate(sender: AnyObject) {
